@@ -4,8 +4,7 @@
 
 ### Elevator Pitch and Key Features
   People love games. Games offer a break from the busy, complicated world around them, and the success of Scrabble and Boggle shows that word games are especially popular. Today, the web is an ideal platform for such games. Take Wordle, for example. Wordle is a popular game by the *New York Times* that draws thousands of players daily. This provides an opportunity for advertising and continuing positive public perception.
-  
-  I am interested in developing something similar. Like Wordle, my game will feature the opportunity for players to take a few minutes of their day to enjoy solving a puzzle with words. It will also allow players to keep track of their success and high scores.
+\  I am interested in developing something similar. Like Wordle, my game will feature the opportunity for players to take a few minutes of their day to enjoy solving a puzzle with words. It will also allow players to keep track of their success and high scores.
 
 ### Technologies
 #### Authentication
