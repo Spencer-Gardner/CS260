@@ -14,8 +14,7 @@
   The server will receive realtime data from two sources: the user and a dictionary API. As part of the game, the user will enter words for scoring. The API will then be used to reference these words recieved as input and communicate their validity to the server.
 
 ### Sketches
-<img width="197" alt="image" src="https://github.com/Spencer-Gardner/CS_260/assets/120418845/0ebf8c54-dcf3-4a57-9324-859c50f6397e">
-
-
-
+![Home](https://github.com/Spencer-Gardner/CS_260/assets/120418845/18f9f269-fd16-4b34-bb2d-4782118a2cfb)
+![Play](https://github.com/Spencer-Gardner/CS_260/assets/120418845/eaac79c1-e788-46b5-a9e1-e6710e97d10b)
+![Score](https://github.com/Spencer-Gardner/CS_260/assets/120418845/801e5261-3ecb-4195-b526-56607f964d1a)
 
