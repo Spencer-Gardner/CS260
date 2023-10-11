@@ -16,3 +16,10 @@
 ![image](https://github.com/Spencer-Gardner/CS_260/assets/120418845/85663589-da2f-4b90-9821-91ba0e97e7e2)
 ### Frameworks
 #### Bootstrap
+
+## JavaScript
+### Syntax
+#### Strict Mode
+- "use strict";
+#### Arrow Functions
+- let myFunction = (a, b) => a * b;
