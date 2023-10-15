@@ -30,4 +30,13 @@ For this deliverable, I developed the basic structure of my application using HT
 - **Database** - _Stats_ includes tables representing data that will be stored in and pulled from the database.
 - **WebSocket** - _Play_ shows real-time data entered by the user.
 
+## CSS
+For this deliverable, I formatted and styled my application.
+- I updated the style and format of the header, footer, and main content body.
+- I updated the style and format of the navigation elements.
+- For the most part, the application is responsive to resizing. However, there are a few quirks on the extremes that I am still trying to sort out.
+- I opted for a minimalist style. I used a simple black-and-white theme for all the content. I feel like, for the most part, things are styled well. I am still working out a few minor preferences. Since I don't know much about JavaScript yet, elements may need to change.
+- I only used a single font. Most of the textual content will be in the _About_ section. I havn't added it in yet, but I'm almost done writing everything.
+- I updated a few of the icons, but I still need to add the official logo.
+
   
