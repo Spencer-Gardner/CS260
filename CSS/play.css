@@ -1,61 +1,66 @@
+* {
+    font-family: 'Courier Prime', monospace;
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
-  }
+}
   
-  header {
+header {
     flex: 0 80px;
-  }
-  
-  main {
+}
+
+main {
     flex: 1 calc(100vh - 110px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-  }
+}
 
-  #input1, #input2, #input3, #input4, #input5, #input6, #input7 {
-    width: 75px;
-    height: 75px;
-    margin: 1px;
-  }
-  
-  footer {
+#input1, #input2, #input3, #input4, #input5, #input6, #input7 {
+    max-width: 4em;
+    aspect-ratio: 1/1;
+    margin: 2.5px;
+}
+
+footer {
     flex: 0 30px;
-  }
-  
-  menu {
+    font-size: small;
+}
+
+menu {
     flex: 1;
     display: flex;
     /*  overwrite Bootstrap so the menu does not wrap */
     flex-direction: row !important;
     list-style: none;
-  }
-  
-  .navbar-brand {
-    padding-left: 0.3em;
+}
+
+.navbar-brand {
+    padding-left: 0.5em;
     border-bottom: solid rgb(182, 182, 182) thin;
-  }
-  
-  menu .nav-item {
-    padding: 0 0.3em;
-  }
-  
-  footer a {
+}
+
+menu .nav-item {
+    padding: 0 0.5em;
+}
+
+footer a {
     float: right;
-  }
-  
-  @media (max-height: 600px) {
+}
+
+@media (max-height: 600px) {
     header {
-      display: none;
+        display: none;
     }
     footer {
-      display: none;
+        display: none;
     }
     main {
-      flex: 1 100vh;
+        flex: 1 100vh;
     }
-  }
+}
   
