@@ -702,7 +702,7 @@ coinToss
 //    Toss completed
 ```
 #### Observer Pattern
-Promises are the standard way to do asynchronous processing in JavaScript, but they are not the only way. The observer pattern, popularized by web programming frameworks such as Angular`, use a model called Observer. The major difference between observers and promises is that promises immediately begin to execute when the promise is created, but observers form a pipeline that you then pass an execution object into. This allows Observers to be reused, and the result of executing an Observable to be saved as a history of a particular execution.
+Promises are the standard way to do asynchronous processing in JavaScript, but they are not the only way. The observer pattern, popularized by web programming frameworks such as Angular`, use a model called Observer. The major difference between observers and promises is that promises immediately begin to execute when the promise is created, but observers form a pipeline that you then pass an execution object into. This allows Observers to be reused, and the result of executing an observable to be saved as a history of a particular execution.
 
 ### Async / Await
 JavaScript `Promise` objects are great for asynchronous execution, but as developers began to build large systems with promises they started wanting a more concise representation. This was provided with the introduction of the `async/await` syntax. The `await` keyword wraps the execution of a promise and removed the need to chain functions. The `await` expression will block until the promise state moves to `fulfilled`, or throws an exception if the state moves to `rejected`. For example, if we have a function that returns a coin toss promise.
