@@ -278,7 +278,7 @@ Arrow functions also have special rules for the return keyword. The return keywo
 ##### This and Closures
 Arrow functions inherit the `this` pointer from the scope of where it is created. This makes what is known as a closure. A closure allows a function to continue referencing its creation scope, even after it has passed out of that scope.
 Closures provide a valuable property when we do things like execute JavaScript within the scope of an HTML page, because it can remember the values of variables when the function was created instead of what they are when they are executed.
-The point of a `debounce` function is to only execute a specified function once within a given time window.
+The point of a debounce function is to only execute a specified function once within a given time window.
 
 ### Arrays
 JavaScript array objects represent a sequence of other objects and primitives. You can reference the members of the array using a zero based index. You can create an array with the array constructor or using the array literal notation shown below.
@@ -455,7 +455,7 @@ const obj = {
 | keys     | Returns an array of keys            |
 | values   | Returns an array of values          |
 The ability to dynamically modify an object is incredibly useful when manipulating data with an indeterminate structure.
-⚠ Note the different uses of the term `object`. Object can refer to the standard JavaScript objects (e.g. `Promise, Map, Object, Function, Date, ...`), or it can refer specifically to the JavaScript Object object (i.e. `new Object()`), or it can refer to any JavaScript object you create (e.g. `{a:'a', b:2}` ). This overloaded usage can be a bit confusing.
+⚠ Note the different uses of the term `object`. Object can refer to the standard JavaScript objects (e.g. Promise, Map, Object, Function, Date, ...), or it can refer specifically to the JavaScript Object object (i.e. `new Object()`), or it can refer to any JavaScript object you create (e.g. `{a:'a', b:2}` ). This overloaded usage can be a bit confusing.
 The meaning of `this` depends upon the scope of where it is used, but in the context of an object it refers to a pointer to the object.
 #### Constructor
 Any function that returns an object is considered a constructor and can be invoked with the `new` operator.
@@ -671,7 +671,7 @@ const delay = (msg, wait) => {
 Now that we know how to use a promise to execute asynchronously, we need to be able to set the state to `fulfilled` when things complete correctly, or to `rejected` when an error happens. The promise executor function takes two functions as parameters, `resolve` and `reject`. Calling `resolve` sets the promise to the `fulfilled` state, and calling `reject` sets the promise to the `rejected` state.
 Consider the following "coin toss" promise that waits ten seconds and then has a fifty percent chance of resolving or rejecting.
 ```js
-const coinToss = new Promise((resolve, reject) => {
+const coinToss = new promise((resolve, reject) => {
   setTimeout(() => {
     if (Math.random() > 0.5) {
       resolve('success');
@@ -684,12 +684,12 @@ const coinToss = new Promise((resolve, reject) => {
 If you log the coinToss promise object to the console immediately after calling the constructor, it will display that it is in the `pending` state.
 ```js
 console.log(coinToss);
-// OUTPUT: Promise {<pending>}
+// OUTPUT: promise {<pending>}
 ```
 If you then wait ten seconds and the log the coinToss promise object again, the state will either show as `fulfilled` or `rejected` depending upon the way the coin landed.
 ```js
 console.log(coinToss);
-// OUTPUT: Promise {<fulfilled>}
+// OUTPUT: promise {<fulfilled>}
 ```
 ```js
 coinToss
@@ -702,10 +702,10 @@ coinToss
 //    Toss completed
 ```
 #### Observer Pattern
-Promises are the standard way to do asynchronous processing in JavaScript, but they are not the only way. The Observer pattern, popularized by web programming frameworks such as Angular, use a model called Observer. The major difference between Observers and Promises is that Promises immediately begin to execute when the Promise is created, but Observers form a pipeline that you then pass an execution object into. This allows Observers to be reused, and the result of executing an Observable to be saved as a history of a particular execution.
+Promises are the standard way to do asynchronous processing in JavaScript, but they are not the only way. The observer pattern, popularized by web programming frameworks such as Angular`, use a model called Observer. The major difference between observers and promises is that promises immediately begin to execute when the promise is created, but observers form a pipeline that you then pass an execution object into. This allows Observers to be reused, and the result of executing an Observable to be saved as a history of a particular execution.
 
 ### Async / Await
-JavaScript Promise objects are great for asynchronous execution, but as developers began to build large systems with promises they started wanting a more concise representation. This was provided with the introduction of the `async/await` syntax. The `await` keyword wraps the execution of a promise and removed the need to chain functions. The `await` expression will block until the promise state moves to `fulfilled`, or throws an exception if the state moves to `rejected`. For example, if we have a function that returns a coin toss promise.
+JavaScript `Promise` objects are great for asynchronous execution, but as developers began to build large systems with promises they started wanting a more concise representation. This was provided with the introduction of the `async/await` syntax. The `await` keyword wraps the execution of a promise and removed the need to chain functions. The `await` expression will block until the promise state moves to `fulfilled`, or throws an exception if the state moves to `rejected`. For example, if we have a function that returns a coin toss promise.
 ```js
 try {
   const result = await coinToss();
