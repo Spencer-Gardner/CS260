@@ -67,13 +67,12 @@ Because JavaScript does not enforce the declaration of a variable before you use
 | `Array`    | An ordered sequence of any type.                                                       | `[3, 'fish']`            |
 | `Map`      | A collection of key-value pairs that support efficient lookups.                        | `new Map()`              |
 | `JSON`     | A lightweight data-interchange format used to share information across programs.       | `{"a":3, "b":"fish"}`    |
-#### Common operators
+#### Common Operators
 When dealing with a number variable, JavaScript supports standard mathematical operators like `+` (add), `-` (subtract), `*` (multiply), `/` (divide), and `===` (equality). For string variables, JavaScript supports `+` (concatenation) and `===` (equality).
 - Strict Equality (===) --> Checks whether its two operands are equal, returning a Boolean result. Unlike the equality operator, the strict equality operator always considers operands of different types to be different. Because strict equality is considered more intuitive, it is almost always preferred and should be used in your code.
   -  Truthy = Value coerced to being true.
   -  Falsy = Value coerced to being false
-- Examples
-  - ```js
+ ``js
 1 == '1';
 // OUTPUT: true
 null == undefined;
@@ -113,7 +112,7 @@ if (...) {
   //...
 }
 ```
-#### Boolean Operator
+#### Boolean Operators
 - and (&&)
 - or (||)
 - not (!)
@@ -172,9 +171,6 @@ const l = 'literal';
 console.log(`string ${l + (1 + 1)} text`);
 // OUTPUT: string literal2 text
 ```
-#### Unicode support
-JavaScript supports Unicode by defining a string as a 16-bit unsigned integer that represents UTF-16 strings. Unicode support allows JavaScript to represent most languages spoken on the planet.
-#### Functions
 | Function      | Meaning                                                      |
 | ------------- | ------------------------------------------------------------ |
 | length        | The number of characters in the string                       |
@@ -183,6 +179,8 @@ JavaScript supports Unicode by defining a string as a 16-bit unsigned integer th
 | startsWith()  | True if the string has a given prefix                        |
 | endsWith()    | True if the string has a given suffix                        |
 | toLowerCase() | Converts all characters to lowercase                         |
+#### Unicode support
+JavaScript supports Unicode by defining a string as a 16-bit unsigned integer that represents UTF-16 strings. Unicode support allows JavaScript to represent most languages spoken on the planet.
 
 ### Functions
 #### Basics
@@ -256,7 +254,9 @@ Functions can also be declared inside other functions. This allows you to modula
 #### Arrow Functions
 ##### Basics
 Because functions are first order objects in JavaScript they can be declared anywhere and passed as parameters. This results in code with lots of anonymous functions cluttering things up. To make the code more compact the arrow syntax was created. This syntax replaces the need for the function keyword with the symbols => placed after the parameter declaration. The enclosing curly braces are also optional. Besides being compact, the arrow function syntax has some important semantic differences from the standard function syntax. This includes restrictions that arrow functions cannot be used for constructors or iterator generators.
-- let myFunction = (a, b) => a * b;
+```js
+let myFunction = (a, b) => a * b;
+```
 ```js
 // This is a function in arrow syntax that takes no parameters and always returns 3.
 () => 3;
@@ -578,7 +578,9 @@ Fortunately, when you use a web framework bundler, discussed in later instructio
 The Document Object Model (DOM) is an object representation of the HTML elements that the browser uses to render the display. The browser also exposes the DOM to external code so that you can write programs that dynamically manipulate the HTML.
 The browser provides access to the DOM through a global variable name `document` that points to the root element of the DOM.
 For everything in an HTML document there is a node in the DOM. This includes elements, attributes, text, comments, and whitespace. All of these nodes form a big tree, with the document node at the top.
+
 ![image](https://github.com/Spencer-Gardner/CS_260/assets/120418845/f23e4e0f-1038-46a0-8999-af65ec7dc54a)
+
 #### Accessing the DOM
 Every element in an HTML document implements the DOM Element interface, which is derived from the DOM Node interface. The DOM Element Interface provides the means for iterating child elements, accessing the parent element, and manipulating the element's attributes. From your JavaScript code, you can start with the document variable and walk through the every element in the tree.
 ```js
@@ -659,11 +661,13 @@ JavaScript executes as a single threaded application. That means there is only e
 1. **rejected** - Failed to complete
 You create a promise by calling the Promise object constructor and passing it an executor function that runs the asynchronous operation. Executing asynchronously means that promise constructor may return before the promise executor function runs.
 #### Time Out
+```js
 const delay = (msg, wait) => {
   setTimeout(() => {
     console.log(msg, wait);
   }, 1000 * wait);
 };
+```
 #### Resolve and Reject
 Now that we know how to use a promise to execute asynchronously, we need to be able to set the state to `fulfilled` when things complete correctly, or to `rejected` when an error happens. The promise executor function takes two functions as parameters, `resolve` and `reject`. Calling `resolve` sets the promise to the `fulfilled` state, and calling `reject` sets the promise to the `rejected` state.
 Consider the following "coin toss" promise that waits ten seconds and then has a fifty percent chance of resolving or rejecting.
