@@ -6,8 +6,8 @@
 ## Web Servers
 
 ### Bash
-- sudo ssh -i ./Keys/CS260_Instance.pem ubuntu@spencer-gardner.click
-- sudo ../deployFiles.sh -k ../../Keys/CS260_Instance.pem -h spencer-gardner.click -s startup
+- ```bash sudo ssh -i ./Keys/CS260_Instance.pem ubuntu@spencer-gardner.click ```
+- ```bash sudo ../deployFiles.sh -k ../../Keys/CS260_Instance.pem -h spencer-gardner.click -s startup ```
 
 
 ## HTML
@@ -28,27 +28,27 @@
 ### Introduction
 Officially known as ECMAScript, JavaScript is a weakly typed language based upon concepts found in C, Java, and Scheme. It is by far the most used programming language in the world.
 Typically, JavaScript is executed using an interpreter at runtime instead of compiling it into a machine specific binary at build time. This has the advantage of making JavaScript very portable, but also allows for many errors, such as using an undefined variable. These types of errors commonly only get discovered when the program crashes during execution.
-You can comment your JavaScript with either line (//) or block (/*...*/) comments.
-While not technically required in most cases, it is considered good form to end JavaScript statements with a semicolon (;). Code blocks, and their resulting scope, are defined with curly braces ({ }).
-The brower's degugger (inspect | F12) is a powerful tool.
+You can comment your JavaScript with either line (`//`) or block (`/*...*/`) comments.
+While not technically required in most cases, it is considered good form to end JavaScript statements with a semicolon (`;`). Code blocks, and their resulting scope, are defined with curly braces (`{...}`).
+The brower's degugger (Inspect | F12) is a powerful tool.
 
 ### Console
 The JavaScript console object provides interaction with the JavaScript runtime's debugger console. This usage of console should not be confused with your operating system's console (AKA terminal or command line). The console object provides functionality for outputting the value of text and objects, running timers, and counting iterations. These are useful debugging tools when you can actually execute your code in an interactive debugger (such as VS Code).
-- console.log(...);
-- console.time(...);
-- console.count(...)
+- `console.log(...);`
+- `console.time(...);`
+- `console.count(...)`
 
 ### HTML
-You can insert JavaScript into HTML either by directly including it in the HTML within the content of a <script> element, or by using the src attribute of the script element to reference an external JavaScript file.
+You can insert JavaScript into HTML either by directly including it in the HTML within the content of a `<script>` element, or by using the `src` attribute of the script element to reference an external JavaScript file.
 
 ### Types and Constructs
 #### Declaring Variables
-Variables are declared using either the let or const keyword. let allows you to change the value of the variable while const will cause an error if you attempt to change it.
-- "use strict";
-- let ...
-- const ...
+Variables are declared using either the let or const keyword. `let` allows you to change the value of the variable while `const` will cause an error if you attempt to change it.
+- `"use strict";`
+- `let`
+- `const`
 #### Variable Type
-Because JavaScript does not enforce the declaration of a variable before you use it, it is entirely possible for a variable to have the type of Undefined.
+Because JavaScript does not enforce the declaration of a variable before you use it, it is entirely possible for a variable to have the type of `Undefined`.
 | Type        | Meaning                                                    |
 | ----------- | ---------------------------------------------------------- |
 | `Null`      | The type of a variable that has not been assigned a value. |
@@ -69,9 +69,9 @@ Because JavaScript does not enforce the declaration of a variable before you use
 | `JSON`     | A lightweight data-interchange format used to share information across programs.       | `{"a":3, "b":"fish"}`    |
 #### Common Operators
 When dealing with a number variable, JavaScript supports standard mathematical operators like `+` (add), `-` (subtract), `*` (multiply), `/` (divide), and `===` (equality). For string variables, JavaScript supports `+` (concatenation) and `===` (equality).
-- Strict Equality (===) --> Checks whether its two operands are equal, returning a Boolean result. Unlike the equality operator, the strict equality operator always considers operands of different types to be different. Because strict equality is considered more intuitive, it is almost always preferred and should be used in your code.
-  -  Truthy = Value coerced to being true.
-  -  Falsy = Value coerced to being false
+- Strict Equality (`===`) --> Checks whether its two operands are equal, returning a boolean result. Unlike the equality operator, the strict equality operator always considers operands of different types to be different. Because strict equality is considered more intuitive, it is almost always preferred and should be used in your code.
+  -  "Truthy" = Value coerced to being true.
+  -  "Falsy" = Value coerced to being false
 ```js
 1 == '1';
 // OUTPUT: true
@@ -113,9 +113,9 @@ if (...) {
 }
 ```
 #### Boolean Operators
-- and (&&)
-- or (||)
-- not (!)
+- and (`&&`)
+- or (`||`)
+- not (`!`)
 #### Loops
 ##### for
 ```js
@@ -205,7 +205,7 @@ hello({ name: 'world', count: 0 });
 // OUTPUT: hello world
 ```
 #### Parameters
-When a function is called, the caller may choose what parameters to provide. If a parameter is not provided then the value of the parameter is `undefined` when the function executes.
+When a function is called, the caller may choose what parameters to provide. If a parameter is not provided then the value of the parameter is undefined when the function executes.
 In addition to explicitly passing the value of a parameter to a function, the function can define a default value. This is done by assigning a value to the parameter in the function declaration.
 ```js
 function labeler(value, title = 'title') {
@@ -253,7 +253,7 @@ console.log(
 Functions can also be declared inside other functions. This allows you to modularize your code without always exposing private details.
 #### Arrow Functions
 ##### Basics
-Because functions are first order objects in JavaScript they can be declared anywhere and passed as parameters. This results in code with lots of anonymous functions cluttering things up. To make the code more compact the arrow syntax was created. This syntax replaces the need for the function keyword with the symbols => placed after the parameter declaration. The enclosing curly braces are also optional. Besides being compact, the arrow function syntax has some important semantic differences from the standard function syntax. This includes restrictions that arrow functions cannot be used for constructors or iterator generators.
+Because functions are first order objects in JavaScript they can be declared anywhere and passed as parameters. This results in code with lots of anonymous functions cluttering things up. To make the code more compact the arrow syntax was created. This syntax replaces the need for the function keyword with the symbols `=>` placed after the parameter declaration. The enclosing curly braces are also optional. Besides being compact, the arrow function syntax has some important semantic differences from the standard function syntax. This includes restrictions that arrow functions cannot be used for constructors or iterator generators.
 ```js
 let myFunction = (a, b) => a * b;
 ```
@@ -276,13 +276,12 @@ a.sort((v1, v2) => v1 - v2);
 ##### Return
 Arrow functions also have special rules for the return keyword. The return keyword is optional if no curly braces are provided for the function and it contains a single expression. In that case the result of the expression is automatically returned. If curly braces are provided then the arrow function behaves just like a standard function.
 ##### This and Closures
-Arrow functions inherit the this pointer from the scope of where it is created. This makes what is known as a closure. A closure allows a function to continue referencing its creation scope, even after it has passed out of that scope.
+Arrow functions inherit the `this` pointer from the scope of where it is created. This makes what is known as a closure. A closure allows a function to continue referencing its creation scope, even after it has passed out of that scope.
 Closures provide a valuable property when we do things like execute JavaScript within the scope of an HTML page, because it can remember the values of variables when the function was created instead of what they are when they are executed.
-The point of a debounce function is to only execute a specified function once within a given time window.
+The point of a `debounce` function is to only execute a specified function once within a given time window.
 
 ### Arrays
-JavaScript array objects represent a sequence of other objects and primitives. You can reference the members of the array using a zero based index. You can create an array with the Array constructor or using the array literal notation shown below.
-
+JavaScript array objects represent a sequence of other objects and primitives. You can reference the members of the array using a zero based index. You can create an array with the array constructor or using the array literal notation shown below.
 ```js
 const a = [1, 2, 3];
 console.log(a[1]);
@@ -333,8 +332,8 @@ console.log(result);
 ### JSON
 JSON provides a simple, and yet effective way, to share and store data. By design JSON is easily convertible to, and from, JavaScript objects. This make it a very convenient data format when working with web technologies. Because of its simplicity, standardization, and compatibility with JavaScript, JSON has become one of the world's most popular data formats.
 Most commonly, a JSON document contains an object. Objects contain zero or more key value pairs. The key is always a string, and the value must be one of the valid JSON data types. Key value pairs are delimited with commas. Curly braces delimit an object, square brackets and commas delimit arrays, and strings are always delimited with double quotes.
-- JSON.parse() --> Converts JSON to a JavaScript object.
-- JSON.stringify() --> Converts a value to the JSON notation that the value represents.
+- `JSON.parse()` --> Converts JSON to a JavaScript object.
+- `JSON.stringify()` --> Converts a value to the JSON notation that the value represents.
 Here is an example of a JSON document.
 ```json
 {
@@ -374,7 +373,7 @@ petRegex.test(text);
 ### Rest and Spread
 #### Rest
 Sometimes you want a function to take an unknown number of parameters. For example, if you wanted to write a function that checks to see if some number in a list is equal to a given number, you could write this using an array.
-JavaScript provides the `rest` syntax to make this easier. Think of it as a parameter that contains the `rest` of the parameters. To turn the last parameter of any function into a `rest` parameter you prefix it with three periods. You can then call it with any number of parameters and they are all automatically combined into an array.
+JavaScript provides the rest syntax to make this easier. Think of it as a parameter that contains the rest of the parameters. To turn the last parameter of any function into a rest parameter you prefix it with three periods (`...`). You can then call it with any number of parameters and they are all automatically combined into an array.
 ```js
 function hasNumber(test, ...numbers) {
   return numbers.some((i) => i === test);
@@ -383,8 +382,8 @@ function hasNumber(test, ...numbers) {
 hasNumber(2, 1, 2, 3);
 // RETURNS: true
 ```
-Note that you can only make the last parameter a `rest` parameter. Otherwise JavaScript would not know which parameters to combine into the array.
-Technically speaking, `rest` allows JavaScript to provide what is called variadic functions.
+Note that you can only make the last parameter a rest parameter. Otherwise JavaScript would not know which parameters to combine into the array.
+Technically speaking, rest allows JavaScript to provide what is called variadic functions.
 #### Spread
 Spread does the opposite of rest. It take an object that is iterable (e.g. array or string) and expands it into a function's parameters. Consider the following.
 ```js
@@ -398,9 +397,9 @@ console.log(p);
 ```
 
 ### Exceptions
-JavaScript supports exception handling using the `try catch` and `throw` syntax. An exception can be triggered whenever your code generates an exception using the `throw` keyword, or whenever an exception is generated by the JavaScript runtime, for example, when an undefined variable is used.
-To catch a thrown exception, you wrap a code block with the `try` keyword, and follow the try block with a `catch` block. If within the try block, including any functions that block calls, an exception is thrown, then all of the code after the throw is ignored, the call stack is unwound, and the catch block is called.
-In addition to a catch block, you can specify a `finally` block that is always called whenever the `try` block is exited regardless if an exception was ever thrown.
+JavaScript supports exception handling using the `try`, `catch` and `throw` syntax. An exception can be triggered whenever your code generates an exception using the `throw` keyword, or whenever an exception is generated by the JavaScript runtime, for example, when an undefined variable is used.
+To catch a thrown exception, you wrap a code block with the `try` keyword, and follow the `try` block with a `catch` block. If within the `try` block, including any functions that block calls, an exception is thrown, then all of the code after the `throw` is ignored, the call stack is unwound, and the `catch` block is called.
+In addition to a `catch` block, you can specify a `finally` block that is always called whenever the `try` block is exited regardless if an exception was ever thrown.
 The basic syntax looks like the following.
 ```js
 try {
@@ -412,7 +411,7 @@ try {
 }
 ```
 Throwing exceptions should only happen when something truly exceptional occurs.
-The fallback pattern is commonly implemented using exception handling. To implement the fallback pattern you put the normal feature path in a try block and then provide a fallback implementation in the catch block. For example, normally you would get the high scores for a game by making a network request, but if the network is not available then a locally cached version of the last available scores is used. By providing a fallback, you can always return something, even if the desired feature is temporarily unavailable.
+The fallback pattern is commonly implemented using exception handling. To implement the fallback pattern you put the normal feature path in a `try` block and then provide a fallback implementation in the `catch` block. For example, normally you would get the high scores for a game by making a network request, but if the network is not available then a locally cached version of the last available scores is used. By providing a fallback, you can always return something, even if the desired feature is temporarily unavailable.
 
 ### Destructuring
 Destructuring, not to be confused with destructing, is the process of pulling individual items out of an existing one, or removing structure. You can do this with either arrays or objects. This is helpful when you only care about a few items in the original structure.
@@ -432,7 +431,7 @@ This may also be used with the rest syntax, objects, etc.
 ### Objects
 #### Basics
 A JavaScript object represents a collection of name value pairs referred to as properties. The property name must be of type String or Symbol, but the value can be of any type. Objects also have common object-oriented functionality such as constructors, a `this` pointer, static properties and functions, and inheritance.
-Objects can be created with the new operator. This causes the object's constructor to be called. Once declared you can add properties to the object by simply referencing the property name in an assignment. Any type of variable can be assigned to a property. This includes a sub-object, array, or function. The properties of an object can be referenced either with dot (`obj.prop`) or bracket notation (`obj['prop']`).
+Objects can be created with the `new` operator. This causes the object's constructor to be called. Once declared you can add properties to the object by simply referencing the property name in an assignment. Any type of variable can be assigned to a property. This includes a sub-object, array, or function. The properties of an object can be referenced either with dot (`obj.prop`) or bracket notation (`obj['prop']`).
 ```js
 const obj = new Object({a:3});
 obj['b'] = 'fish';
@@ -459,7 +458,7 @@ The ability to dynamically modify an object is incredibly useful when manipulati
 ⚠ Note the different uses of the term `object`. Object can refer to the standard JavaScript objects (e.g. `Promise, Map, Object, Function, Date, ...`), or it can refer specifically to the JavaScript Object object (i.e. `new Object()`), or it can refer to any JavaScript object you create (e.g. `{a:'a', b:2}` ). This overloaded usage can be a bit confusing.
 The meaning of `this` depends upon the scope of where it is used, but in the context of an object it refers to a pointer to the object.
 #### Constructor
-Any function that returns an object is considered a `constructor` and can be invoked with the `new` operator.
+Any function that returns an object is considered a constructor and can be invoked with the `new` operator.
 ```js
 function Person(name) {
   return {
@@ -492,7 +491,7 @@ const p = new Person('Eich');
 p.log();
 // OUTPUT: My name is Eich
 ```
-You can make properties and functions of classes private by prefixing them with a # (i.e. this.#name = name;).
+You can make properties and functions of classes private by prefixing them with a `#` (i.e. `this.#name = name;`).
 #### Inheritance
 Classes can be extended by using the extends keyword to define inheritance. Parameters that need to be passed to the parent class are delivered using the super function. Any functions defined on the child that have the same name as the parent override the parent's implementation. A parent's function can be explicitly accessed using the super keyword.
 ```js
@@ -553,13 +552,13 @@ class Phone {
 Initially JavaScript used the keyword var to declare a variable. The problem with var, unlike const or let, is that it ignores block scope. Variables declared with var are always logically hoisted to the top of the function. For example, the following code shows the same variable name being used within different enclosing scopes. However, because var ignores block scope the for loop is simply assigning a new value to x rather than declaring a new variable that has the same name.
 ⚠ There are few cases where it makes sense to use var. It is strongly suggested that you only use const and let unless you fully understand why you are using var.
 #### This
-The keyword `this` represents a variable that points to an object that contains the context within the scope of the currently executing line of code. The `this` variable is automatically declared and you can reference `this` anywhere in a JavaScript program. Because the value of `this` depends upon the context in which it is referenced, there are three different context that this can refer to:
-1. **Global** - When `this` is referenced outside a function or object it refers to the `globalThis` object. The globalThis object represents the context for runtime environment. For example, when running in a browser, globalThis refers to the browser's window object.
-1. **Function** - When `this` is referenced in a function it refers to the object that owns the function. That is either an object you defined or globalThis if the function is defined outside of an object. Note that when running is JavaScript strict mode, a global function's this variable is undefined instead of globalThis.
+The keyword `this` represents a variable that points to an object that contains the context within the scope of the currently executing line of code. The `this` variable is automatically declared and you can reference `this` anywhere in a JavaScript program. Because the value of `this` depends upon the context in which it is referenced, there are three different context that `this` can refer to:
+1. **Global** - When `this` is referenced outside a function or object it refers to the `globalThis` object. The `globalThis` object represents the context for runtime environment. For example, when running in a browser, globalThis refers to the browser's window object.
+1. **Function** - When `this` is referenced in a function it refers to the object that owns the function. That is either an object you defined or globalThis if the function is defined outside of an object. Note that when running is JavaScript strict mode, a global function's `this` variable is undefined instead of globalThis.
 1. **Object** - When `this` is referenced in a object it refers to the object.
 #### Closure
 A closure is defined as a function and its surrounding state. That means whatever variables are accessible when a function is created are available inside of that function. This holds true even if you pass the function outside of the scope of its original creation.
-Arrow functions are a bit different because they inherit the this pointer of their creation context. For example, if we make a function in our object that returns an arrow function with `return`, then the this pointer will be the object's this pointer since that was the active context at the time the arrow function was created.
+Arrow functions are a bit different because they inherit the `this` pointer of their creation context. For example, if we make a function in our object that returns an arrow function with `return`, then the `this` pointer will be the object's `this` pointer since that was the active context at the time the arrow function was created.
 
 ### Modules
 JavaScript modules allow for the partitioning and sharing of code. Initially JavaScript had no support for modules. Node.js, a server side JavaScript execution application, introduced the concept of modules in order to support the importing of packages of JavaScript from third party providers.
@@ -593,7 +592,7 @@ function displayElement(el) {
 
 displayElement(document);
 ```
-You can provide a CSS selector to the querySelectorAll function in order to select elements from the document. The textContent property contains all of the element's text. You can even access a textual representation of an element's HTML content with the innerHTML property.
+You can provide a CSS selector to the `querySelectorAll` function in order to select elements from the document. The `textContent` property contains all of the element's text. You can even access a textual representation of an element's HTML content with the `innerHTML` property.
 ```js
 const listElements = document.querySelectorAll('p');
 for (const el of listElements) {
@@ -601,7 +600,7 @@ for (const el of listElements) {
 }
 ```
 #### Modifying the DOM
-The DOM supports the ability to insert, modify, or delete the elements in the DOM. To create a new element you first create the element on the DOM document. You then insert the new element into the DOM tree by appending it to an existing element in the tree.
+The DOM supports the ability to insert, modify, or delete the elements in the DOM. To create a new element, you first create the element on the DOM document. You then insert the new element into the DOM tree by appending it to an existing element in the tree.
 ```js
 function insertChild(parentSelector, text) {
   const newChild = document.createElement('div');
@@ -656,10 +655,10 @@ A local storage value must be of type `string`, `number`, or `boolean`. If you w
 ### Promises
 #### Basics
 JavaScript executes as a single threaded application. That means there is only ever one piece of code executing at the same time. However, the fact that it does not execute concurrently does not mean that it does not execute in parallel. You can asynchronously execute code with the use of a JavaScript `Promise`. Because the execution is asynchronous the promise object can be in one of three states at any given point in time.
-1. **pending** - Currently running asynchronously
-1. **fulfilled** - Completed successfully
-1. **rejected** - Failed to complete
-You create a promise by calling the Promise object constructor and passing it an executor function that runs the asynchronous operation. Executing asynchronously means that promise constructor may return before the promise executor function runs.
+1. **pending** - Currently running asynchronously.
+1. **fulfilled** - Completed successfully.
+1. **rejected** - Failed to complete.
+You create a promise by calling the promise object constructor and passing it an executor function that runs the asynchronous operation. Executing asynchronously means that promise constructor may return before the promise executor function runs.
 #### Time Out
 ```js
 const delay = (msg, wait) => {
@@ -717,7 +716,7 @@ try {
   console.log(`Toss completed`);
 }
 ```
-One important restriction for working with `await` is that you cannot call await unless it is called at the top level of the JavaScript, or is in a function that is defined with the `async` keyword. Applying the `async` keyword transforms the function so that it returns a promise that will resolve to the value that was previously returned by the function. Basically this turns any function into an asynchronous function, so that it can in turn make asynchronous requests.
+One important restriction for working with `await` is that you cannot call `await` unless it is called at the top level of the JavaScript, or is in a function that is defined with the `async` keyword. Applying the `async` keyword transforms the function so that it returns a promise that will resolve to the value that was previously returned by the function. Basically, this turns any function into an asynchronous function, so that it can in turn make asynchronous requests.
 
 ### Debugging
 
