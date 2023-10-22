@@ -30,10 +30,10 @@ Officially known as ECMAScript, JavaScript is a weakly typed language based upon
 Typically, JavaScript is executed using an interpreter at runtime instead of compiling it into a machine specific binary at build time. This has the advantage of making JavaScript very portable, but also allows for many errors, such as using an undefined variable. These types of errors commonly only get discovered when the program crashes during execution.
 You can comment your JavaScript with either line (`//`) or block (`/*...*/`) comments.
 While not technically required in most cases, it is considered good form to end JavaScript statements with a semicolon (`;`). Code blocks, and their resulting scope, are defined with curly braces (`{...}`).
-The brower's degugger (Inspect | F12) is a powerful tool.
+The brower's degugger (Inspect | `F12`) is a powerful tool.
 
 ### Console
-The JavaScript console object provides interaction with the JavaScript runtime's debugger console. This usage of console should not be confused with your operating system's console (AKA terminal or command line). The console object provides functionality for outputting the value of text and objects, running timers, and counting iterations. These are useful debugging tools when you can actually execute your code in an interactive debugger (such as VS Code).
+The JavaScript console object provides interaction with the JavaScript runtime's debugger console. This usage of console should not be confused with your operating system's console (aka terminal or command line). The console object provides functionality for outputting the value of text and objects, running timers, and counting iterations. These are useful debugging tools when you can actually execute your code in an interactive debugger (such as VS Code).
 - `console.log(...);`
 - `console.time(...);`
 - `console.count(...)`
@@ -48,7 +48,7 @@ Variables are declared using either the let or const keyword. `let` allows you t
 - `let`
 - `const`
 #### Variable Type
-Because JavaScript does not enforce the declaration of a variable before you use it, it is entirely possible for a variable to have the type of `Undefined`.
+Because JavaScript does not enforce the declaration of a variable before you use it, it is entirely possible for a variable to have the type of `undefined`.
 | Type        | Meaning                                                    |
 | ----------- | ---------------------------------------------------------- |
 | `Null`      | The type of a variable that has not been assigned a value. |
@@ -346,7 +346,7 @@ Here is an example of a JSON document.
   "end": null
 }
 ```
-Note that in this example, JSON cannot represent the JavaScript `undefined` object and so it gets dropped when converting from JavaScript to JSON.
+Note that in this example, JSON cannot represent the JavaScript undefined object and so it gets dropped when converting from JavaScript to JSON.
 
 ### Regular Expressions
 Regular expression support is built right into JavaScript.
@@ -553,8 +553,8 @@ Initially JavaScript used the keyword var to declare a variable. The problem wit
 ⚠ There are few cases where it makes sense to use var. It is strongly suggested that you only use const and let unless you fully understand why you are using var.
 #### This
 The keyword `this` represents a variable that points to an object that contains the context within the scope of the currently executing line of code. The `this` variable is automatically declared and you can reference `this` anywhere in a JavaScript program. Because the value of `this` depends upon the context in which it is referenced, there are three different context that `this` can refer to:
-1. **Global** - When `this` is referenced outside a function or object it refers to the `globalThis` object. The `globalThis` object represents the context for runtime environment. For example, when running in a browser, globalThis refers to the browser's window object.
-1. **Function** - When `this` is referenced in a function it refers to the object that owns the function. That is either an object you defined or globalThis if the function is defined outside of an object. Note that when running is JavaScript strict mode, a global function's `this` variable is undefined instead of globalThis.
+1. **Global** - When `this` is referenced outside a function or object it refers to the `globalThis` object. The `globalThis` object represents the context for runtime environment. For example, when running in a browser, `globalThis` refers to the browser's window object.
+1. **Function** - When `this` is referenced in a function it refers to the object that owns the function. That is either an object you defined or `globalThis` if the function is defined outside of an object. Note that when running is JavaScript strict mode, a global function's `this` variable is undefined instead of `globalThis`.
 1. **Object** - When `this` is referenced in a object it refers to the object.
 #### Closure
 A closure is defined as a function and its surrounding state. That means whatever variables are accessible when a function is created are available inside of that function. This holds true even if you pass the function outside of the scope of its original creation.
