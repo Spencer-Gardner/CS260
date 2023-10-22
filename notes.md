@@ -72,7 +72,7 @@ When dealing with a number variable, JavaScript supports standard mathematical o
 - Strict Equality (===) --> Checks whether its two operands are equal, returning a Boolean result. Unlike the equality operator, the strict equality operator always considers operands of different types to be different. Because strict equality is considered more intuitive, it is almost always preferred and should be used in your code.
   -  Truthy = Value coerced to being true.
   -  Falsy = Value coerced to being false
- ``js
+```js
 1 == '1';
 // OUTPUT: true
 null == undefined;
@@ -80,7 +80,7 @@ null == undefined;
 '' == false;
 // OUTPUT: true
 ```
-  - ```js
+```js
 1 === '1';
 // OUTPUT: false
 null === undefined;
