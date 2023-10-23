@@ -668,7 +668,7 @@ const delay = (msg, wait) => {
 };
 ```
 #### Resolve and Reject
-Now that we know how to use a promise to execute asynchronously, we need to be able to set the state to `fulfilled` when things complete correctly, or to `rejected` when an error happens. The promise executor function takes two functions as parameters, `resolve` and `reject`. Calling `resolve` sets the promise to the `fulfilled` state, and calling `reject` sets the promise to the `rejected` state.
+Now that we know how to use a promise to execute asynchronously, we need to be able to set the state to fulfilled when things complete correctly, or to rejected when an error happens. The promise executor function takes two functions as parameters, `resolve` and `reject`. Calling `resolve` sets the promise to the fulfilled state, and calling `reject` sets the promise to the rejected state.
 Consider the following "coin toss" promise that waits ten seconds and then has a fifty percent chance of resolving or rejecting.
 ```js
 const coinToss = new promise((resolve, reject) => {
@@ -681,12 +681,12 @@ const coinToss = new promise((resolve, reject) => {
   }, 10000);
 });
 ```
-If you log the coinToss promise object to the console immediately after calling the constructor, it will display that it is in the `pending` state.
+If you log the coinToss promise object to the console immediately after calling the constructor, it will display that it is in the pending state.
 ```js
 console.log(coinToss);
 // OUTPUT: promise {<pending>}
 ```
-If you then wait ten seconds and the log the coinToss promise object again, the state will either show as `fulfilled` or `rejected` depending upon the way the coin landed.
+If you then wait ten seconds and the log the coinToss promise object again, the state will either show as fulfilled or rejected depending upon the way the coin landed.
 ```js
 console.log(coinToss);
 // OUTPUT: promise {<fulfilled>}
@@ -702,10 +702,10 @@ coinToss
 //    Toss completed
 ```
 #### Observer Pattern
-Promises are the standard way to do asynchronous processing in JavaScript, but they are not the only way. The observer pattern, popularized by web programming frameworks such as Angular`, use a model called Observer. The major difference between observers and promises is that promises immediately begin to execute when the promise is created, but observers form a pipeline that you then pass an execution object into. This allows observers to be reused, and the result of executing an observable to be saved as a history of a particular execution.
+Promises are the standard way to do asynchronous processing in JavaScript, but they are not the only way. The observer pattern, popularized by web programming frameworks such as Angular, use a model called Observer. The major difference between observers and promises is that promises immediately begin to execute when the promise is created, but observers form a pipeline that you then pass an execution object into. This allows observers to be reused, and the result of executing an observable to be saved as a history of a particular execution.
 
 ### Async / Await
-JavaScript `Promise` objects are great for asynchronous execution, but as developers began to build large systems with promises they started wanting a more concise representation. This was provided with the introduction of the `async/await` syntax. The `await` keyword wraps the execution of a promise and removed the need to chain functions. The `await` expression will block until the promise state moves to `fulfilled`, or throws an exception if the state moves to `rejected`. For example, if we have a function that returns a coin toss promise.
+JavaScript `Promise` objects are great for asynchronous execution, but as developers began to build large systems with promises they started wanting a more concise representation. This was provided with the introduction of the async/await syntax. The `await` keyword wraps the execution of a promise and removed the need to chain functions. The `await` expression will block until the promise state moves to fulfilled, or throws an exception if the state moves to rejected. For example, if we have a function that returns a coin toss promise.
 ```js
 try {
   const result = await coinToss();
@@ -720,3 +720,50 @@ One important restriction for working with `await` is that you cannot call `awai
 
 ### Debugging
 
+
+## Midterm Study Guide
+1. In the following code, what does the link element do?
+  - <link> defines the relationship between the current document and an external resource.
+2. In the following code,  what does a div tag do?
+  - <div> is used as a container for HTML elements.
+3. In the following code, what is the difference between the #title and .grid selector?
+  - ...
+4. In the following code, what is the difference between padding and margin?
+  - Padding represents the amount of inner space an element has.
+  - Margin is whitespace available surrounding an element.
+5. Given this HTML and this CSS how will the images be displayed using flex?
+  - ...
+6. What does the following padding CSS do?
+  - ...
+7. What does the following code using arrow syntax function declaration do?
+  - ...
+8. What does the following code using map with an array output?
+  - ...
+9. What does the following code output using getElementByID and addEventListener?
+10. What does the following line of JavaScript do using a # selector?
+11. Which of the following are true? (mark all that are true about the DOM)
+12. By default, the HTML span element has a default CSS display property value of:
+13. How would you use CSS to change all the div elements to have a background color of red?
+14. How would you display an image with a hyperlink in HTML?
+15. In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
+16. Given the following HTML, what CSS would you use to set the text "trouble" to green and leave the "double" text unaffected?
+17. What will the following code output when executed using a for loop and console.log?
+18. How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
+19. What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
+20. How do you declare the document type to be html?
+21. What is valid JavaScript syntax for if, else, for, while, switch statements?
+22. What is the correct syntax for creating a JavaScript object?
+23. Is is possible to add new properties to JavaScript objects?
+24. If you want to include JavaScript on an HTML page, which tag do you use?
+25. Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
+26. Which of the following correctly describes JSON?
+27. What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
+28. Which of the following console command creates a remote shell session?
+29. Which of the following is true when the -la parameter is specified for the ls console command?
+30. Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
+31. Is a web certificate necessary to use HTTPS?
+32. Can a DNS A record point to an IP address or another A record?
+33. Port 443, 80, 22 is reserved for which protocol?
+34. What will the following code using Promises output when executed?
+
+  
