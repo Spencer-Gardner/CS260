@@ -16,7 +16,6 @@ let word = display.innerText.split(' ');
 class Game {
     extra1;
     extra2;
-    interval;
     list;
     score;
 
@@ -68,6 +67,25 @@ class Game {
         }         
     }
 
+    setExtras() {
+        this.extra1 = setInterval(() => {
+            this.getLetter("extra1");
+        }, 60 * 1000);
+        this.extra2 = setInterval(() => {
+            this.getLetter("extra2");
+        }, 60 * 1000);
+    }
+    
+    setLetters() {
+        this.getLetter("letter1");
+        this.getLetter("letter2");
+        this.getLetter("letter3");
+        this.getLetter("letter4");
+        this.getLetter("letter5");
+        this.getLetter("extra1");
+        this.getLetter("extra2");
+    }
+
     addWord(guess) {
         this.list.push(guess);
     }
@@ -92,30 +110,30 @@ class Game {
         }
         document.getElementById("score").innerText = this.score;
     }
-
-    setExtras() {
-        this.extra1 = setInterval(() => {
-            this.getLetter("extra1");
-        }, 60 * 1000);
-        this.extra2 = setInterval(() => {
-            this.getLetter("extra2");
-        }, 60 * 1000);
-    }
-    
-    setLetters() {
-        this.getLetter("letter1");
-        this.getLetter("letter2");
-        this.getLetter("letter3");
-        this.getLetter("letter4");
-        this.getLetter("letter5");
-        this.getLetter("extra1");
-        this.getLetter("extra2");
-    }
     
     end() {
         clearInterval(this.extra1);
         clearInterval(this.extra2);
-        localStorage.setItem("score", this.score);
+        if (this.score > 35) {
+            let wins = localStorage.getItem("wins");
+            wins += 1;
+            localStorage.setItem("wins", wins);
+        }
+        const high1 = localStorage.getItem("high1");
+        const high2 = localStorage.getItem("high2");
+        const high3 = localStorage.getItem("high3");
+        if (this.score > high3) {
+            if (this.score > high2) {
+                if (this.score > high1) {
+                    localStorage.setItem("high1", this.score);
+                    localStorage.setItem("high2", high2);
+                    localStorage.setItem("high3", high3);
+                }
+                localStorage.setItem("high2", this.score);
+                localStorage.setItem("high3", high2);
+            }
+            localStorage.setItem("high3", this.score);
+        }       
     }
 
     reset() {
