@@ -1,15 +1,26 @@
 function updateStats() {
-    const table = document.getElementById("stats");
-    table.row[2].cell[1] = localStorage.getItem("plays");
-    table.row[2].cell[2] = localStorage.getItem("wins");
-};
+    const plays = document.getElementById("plays");
+    const wins = document.getElementById("wins");
+
+    plays.textContent = localStorage.getItem("plays");
+    wins.textContent = localStorage.getItem("wins");
+}
 
 function updateScores() {
-    const table = document.getElementById("highscores");
-    table.row[2].cell[2] = localStorage.getItem("score1");
-    table.row[2].cell[3] = localStorage.getItem("date1");
-    table.row[3].cell[2] = localStorage.getItem("score2");
-    table.row[3].cell[3] = localStorage.getItem("date2");
-    table.row[4].cell[2] = localStorage.getItem("score3");
-    table.row[4].cell[3] = localStorage.getItem("date3");
+    const score1 = document.getElementById("score1");
+    const date1 = document.getElementById("date1");
+    const score2 = document.getElementById("score2");
+    const date2 = document.getElementById("date2");
+    const score3 = document.getElementById("score3");
+    const date3 = document.getElementById("date3");
+
+    score1.textContent = localStorage.getItem("score1");
+    date1.textContent = localStorage.getItem("date1");
+    score2.textContent = localStorage.getItem("score2");
+    date2.textContent = localStorage.getItem("date2");
+    score3.textContent = localStorage.getItem("score3");
+    date3.textContent = localStorage.getItem("date3");
 };
+
+updateStats();
+updateScores();
