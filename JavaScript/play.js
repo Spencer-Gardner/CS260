@@ -14,6 +14,7 @@ let word = display.innerText.split(' ');
 
 // GAME...
 class Game {
+    // Add Letters --> Draw elements to group.
     extra1;
     extra2;
     list;
@@ -114,25 +115,30 @@ class Game {
     end() {
         clearInterval(this.extra1);
         clearInterval(this.extra2);
+        let plays = localStorage.getItem("plays") !== null ? parseInt(localStorage.getItem("plays")) : 0;
+        plays += 1;
+        localStorage.setItem("plays", plays);
         if (this.score > 35) {
-            let wins = localStorage.getItem("wins");
+            let wins = localStorage.getItem("wins") !== null ? parseInt(localStorage.getItem("wins")) : 0;
             wins += 1;
             localStorage.setItem("wins", wins);
         }
-        const high1 = localStorage.getItem("high1");
-        const high2 = localStorage.getItem("high2");
-        const high3 = localStorage.getItem("high3");
-        if (this.score > high3) {
-            if (this.score > high2) {
-                if (this.score > high1) {
-                    localStorage.setItem("high1", this.score);
-                    localStorage.setItem("high2", high2);
-                    localStorage.setItem("high3", high3);
+        const score1 = localStorage.getItem("score1") !== null ? parseInt(localStorage.getItem("score1")) : 0;
+        const score2 = localStorage.getItem("score2") !== null ? parseInt(localStorage.getItem("score2")) : 0;
+        const score3 = localStorage.getItem("score3") !== null ? parseInt(localStorage.getItem("score3")) : 0;
+        if (this.score > score3) {
+            if (this.score > score2) {
+                if (this.score > score1) {
+                    localStorage.setItem("score1", this.score);
+                    localStorage.setItem("score2", score1);
+                    localStorage.setItem("score3", score2);
+                } else {
+                    localStorage.setItem("score2", this.score);
+                    localStorage.setItem("score3", score2);
                 }
-                localStorage.setItem("high2", this.score);
-                localStorage.setItem("high3", high2);
-            }
-            localStorage.setItem("high3", this.score);
+            } else {
+                localStorage.setItem("score3", this.score);
+            }            
         }       
     }
 
@@ -204,7 +210,7 @@ function startTimer() {
 
 function addLetter(id) {
     if (active === true) {
-        let letter = document.getElementById(id).innerText;
+        const letter = document.getElementById(id).innerText;
         for (let i = 0; i < 7; i++) {
             if (word[i] === '_') {
                 word[i] = letter;
