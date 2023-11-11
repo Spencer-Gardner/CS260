@@ -46,4 +46,11 @@ For this deliverable, I implemented JavaScript so that the application now funct
 - **WebSocket** - The game is now functional with access to a dictionary API. When a guess is entered by the user, a request is sent to the API to verify the word.
 - **Application Logic** - The keyboard allows the user to interact with the game. The display keeps track of letters, time, and score. I may adjust some rules later, but it is funtional overall.
 
+## Service
+For this deliverable, I added endpoints to the backend for getting and posting user stats.
+- **Node.js/Express HTTP** - I added an index.js file to create an HTTP service using Node.js and Express.
+- **Static Middleware** - index.js includes the use of Express static middleware.
+- **Third-Party Endpoints** - play.js makes a call to a dictionary API when a word is entered.
+- **Backend Endpoints** - index.js defines endpoints for getting and posting stats.
+- **Frontend Endpoints** - Both play.js and stats.js make calls using fetch to the endpoints provided in index.js.
   
