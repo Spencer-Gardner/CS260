@@ -124,13 +124,11 @@ class Game {
         }
 
         let plays = stats.plays;
-        plays += 1;     
-        localStorage.setItem("plays", plays);
+        plays += 1;
     
         let wins = stats.wins;
-        if (this.score > 35) {            
+        if (this.score >= 35) {            
             wins += 1;
-            localStorage.setItem("wins", wins);
         }
 
         let scores = stats.scores;
@@ -138,20 +136,14 @@ class Game {
             if (this.score > scores[1]) {
                 if (this.score > scores[0]) {
                     scores[2] = scores[1];
-                    localStorage.setItem("score3", scores[1]);
                     scores[1] = scores[0];
-                    localStorage.setItem("score2", scores[0]);
-                    scores[0] = this.score;
-                    localStorage.setItem("score1", this.score);                    
+                    scores[0] = this.score;                    
                 } else {
                     scores[2] = scores[1];
-                    localStorage.setItem("score3", scores[1]);
-                    scores[1] = this.score;
-                    localStorage.setItem("score2", this.score);                    
+                    scores[1] = this.score;                 
                 }
             } else {
                 scores[2] = this.score;
-                localStorage.setItem("score3", this.score);
             }            
         }
         
