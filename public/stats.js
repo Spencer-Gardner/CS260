@@ -1,3 +1,17 @@
+async function loadScores() {
+    try {
+        const response = await fetch('/api/stats');
+        let stats = await response.json();
+        localStorage.setItem("plays", JSON.stringify(stats.plays));
+        localStorage.setItem("wins", JSON.stringify(stats.wins));
+        localStorage.setItem("score1", JSON.stringify(stats.scores[0]));
+        localStorage.setItem("score2", JSON.stringify(stats.scores[1]));
+        localStorage.setItem("score3", JSON.stringify(stats.scores[2]));
+    } catch {
+        console.log("Error");
+    }
+}
+
 function updateUser() {
     const user = document.getElementById("user");
     user.innerText = localStorage.getItem("username") + "'s Stats";
@@ -19,6 +33,7 @@ function updateScores() {
     score3.innerText = localStorage.getItem("score3");
 };
 
+loadScores();
 updateUser();
 updateStats();
 updateScores();
