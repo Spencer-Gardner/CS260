@@ -41,10 +41,9 @@ For this deliverable, I formatted and styled my application.
 
 ## JavaScript
 For this deliverable, I implemented JavaScript so that the application now functions. I also added placeholders for future technology.
-
-- Login - The enter button on the home page redirects the user to the play page, and the user's name is stored in local storage.
-- Database - The stats page displays the user's name as well as any stats stored in local storage. Information will be stored/accessed through a database in the future.
-- WebSocket - The game is now functional with access to a dictionary API. When a guess is entered by the user, a request is sent to the API to verify the word.
-- Application Logic - The keyboard allows the user to interact with the game. The display keeps track of letters, time, and score. I may adjust some rules later but it is funtional overall.
+- **Login** - The enter button on the home page redirects the user to the play page, and the user's name is stored in local storage.
+- **Database** - The stats page displays the user's name as well as any stats stored in local storage. Information will be stored/accessed through a database in the future.
+- **WebSocket** - The game is now functional with access to a dictionary API. When a guess is entered by the user, a request is sent to the API to verify the word.
+- **Application Logic** - The keyboard allows the user to interact with the game. The display keeps track of letters, time, and score. I may adjust some rules later, but it is funtional overall.
 
   
