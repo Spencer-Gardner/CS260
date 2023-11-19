@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
-const playButton = document.getElementById("play");
+const playButton = document.getElementById('play');
 let active = false;
 
-const timerElement = document.getElementById("timer");
+const timerElement = document.getElementById('timer');
 let minutes = 3;
 let seconds = 0;
 let timerInterval;
 
-const display = document.getElementById("word");
+const display = document.getElementById('word');
 let word = display.innerText.split(' ');
 
 
@@ -69,21 +69,21 @@ class Game {
 
     setExtras() {
         this.extra1 = setInterval(() => {
-            this.getLetter("extra1");
+            this.getLetter('extra1');
         }, 60 * 1000);
         this.extra2 = setInterval(() => {
-            this.getLetter("extra2");
+            this.getLetter('extra2');
         }, 60 * 1000);
     }
     
     setLetters() {
-        this.getLetter("letter1");
-        this.getLetter("letter2");
-        this.getLetter("letter3");
-        this.getLetter("letter4");
-        this.getLetter("letter5");
-        this.getLetter("extra1");
-        this.getLetter("extra2");
+        this.getLetter('letter1');
+        this.getLetter('letter2');
+        this.getLetter('letter3');
+        this.getLetter('letter4');
+        this.getLetter('letter5');
+        this.getLetter('extra1');
+        this.getLetter('extra2');
     }
 
     addWord(guess) {
@@ -108,19 +108,21 @@ class Game {
                 this.score += 5;
                 break;
         }
-        document.getElementById("score").innerText = this.score;
+        document.getElementById('score').innerText = this.score;
     }
     
     async end() {
         clearInterval(this.extra1);
         clearInterval(this.extra2);
+
+        const username = localStorage.getItem('username');
        
         let stats = {};
         try {
-            const response = await fetch('/api/stats');
+            const response = await fetch(`/api/stats/${username}`);
             stats = await response.json();
         } catch {
-            console.log("Error");
+            console.log('Error');
         }
 
         let plays = stats.plays;
@@ -154,7 +156,7 @@ class Game {
         };
 
         try {
-            await fetch('/api/stats', {
+            await fetch(`/api/stats/${username}`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -162,7 +164,7 @@ class Game {
                 body: JSON.stringify(updatedStats),
               });
         } catch {
-            console.log("Error");
+            console.log('Error');
         }
     }
 
@@ -170,7 +172,7 @@ class Game {
         clearInterval(this.extra1);
         clearInterval(this.extra2);
         this.score = 0;
-        document.getElementById("score").innerText = "--";
+        document.getElementById('score').innerText = '--';
         word = ['_', '_', '_', '_', '_', '_', '_']
         display.innerText = word.join(' ');        
     }
@@ -180,18 +182,17 @@ const game = new Game();
 
 
 // PLAY...
-
 function play() {
     if (active === false) {
         active = true;
-        playButton.innerText = "Reset";
+        playButton.innerText = 'Reset';
         startTimer();
         game.reset();
         game.setLetters();
         game.setExtras();        
     } else {
         active = false;      
-        playButton.innerText = "Play";
+        playButton.innerText = 'Play';
         resetTimer();
         game.reset();       
     }
@@ -199,15 +200,14 @@ function play() {
 
 
 // TIMER...
-
 function startTimer() {
-    timerElement.innerText = "03:00";
+    timerElement.innerText = '03:00';
     minutes = 3;
     seconds = 0;        
     function updateTimer() {
     if (minutes === 0 && seconds === 0) {
         active = false;
-        playButton.innerText = "Play";
+        playButton.innerText = 'Play';
         clearInterval(timerInterval);        
         game.end();
     } else if (seconds === 0) {
@@ -224,14 +224,13 @@ function startTimer() {
 
  function resetTimer() {
     clearInterval(timerInterval);
-    timerElement.innerText = "03:00";
+    timerElement.innerText = '03:00';
     minutes = 3;
     seconds = 0;
 }    
 
 
 // KEYBOARD...
-
 function addLetter(id) {
     if (active === true) {
         const letter = document.getElementById(id).innerText;
@@ -259,7 +258,7 @@ function deleteLetter() {
 
 function enterWord() {
     if (active === true) {
-        let guess = "";
+        let guess = '';
         for (let i = 0; i < 7; i++) {
             if (word[i] === '_') {
                 break;
@@ -269,8 +268,8 @@ function enterWord() {
         }
         display.innerText = word.join(' ');
         if (guess.length > 2 && !game.list.includes(guess)) {
-            console.log("https://api.dictionaryapi.dev/api/v2/entries/en/" + guess)
-            fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + guess)
+            console.log('https://api.dictionaryapi.dev/api/v2/entries/en/' + guess)
+            fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + guess)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error');
@@ -278,10 +277,10 @@ function enterWord() {
                 return response.json();
             })
             .then(data => {
-                if (data.title === "No Definitions Found") {
-                    console.log("Rejected: " + guess);
+                if (data.title === 'No Definitions Found') {
+                    console.log('Rejected: ' + guess);
                 } else {
-                    console.log("Accepted: " + guess);
+                    console.log('Accepted: ' + guess);
                     game.addWord(guess);
                     game.updateScore(guess);
                 }
@@ -292,4 +291,3 @@ function enterWord() {
         }
     }
 }
-
