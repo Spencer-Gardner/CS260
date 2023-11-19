@@ -10,6 +10,24 @@ body {
   
 header {
     flex: 0 80px;
+    flex-direction: row;
+}
+
+menu {
+    flex: 1;
+    display: flex;
+    /*  overwrite Bootstrap so the menu does not wrap */
+    flex-direction: row !important;
+    list-style: none;
+}
+
+menu .nav-item {
+    padding: 0 0.5em;
+}
+
+.navbar-brand {
+    padding-left: 0.5em;
+    border-bottom: solid rgb(182, 182, 182) thin;
 }
 
 main {
@@ -21,12 +39,10 @@ main {
 }
 
 #stats {
-    /* table-layout: fixed; */
     width: 25% !important;
 }
 
 #highscores {
-    /* table-layout: fixed; */
     width: 25% !important;
 }
 
@@ -35,36 +51,15 @@ footer {
     font-size: small;
 }
 
-menu {
-    flex: 1;
-    display: flex;
-    /*  overwrite Bootstrap so the menu does not wrap */
-    flex-direction: row !important;
-    list-style: none;
-}
-
-.navbar-brand {
-    padding-left: 0.5em;
-    border-bottom: solid rgb(182, 182, 182) thin;
-}
-
-menu .nav-item {
-    padding: 0 0.5em;
-}
-
 footer a {
     float: right;
 }
 
 @media (max-height: 600px) {
-    header {
-        display: none;
-    }
     footer {
         display: none;
     }
     main {
         flex: 1 100vh;
     }
-}
-  
+}  
