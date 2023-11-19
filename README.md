@@ -60,3 +60,10 @@ For this deliverable, I connected my application to a database.
 - **Endpoints** - The server endpoints are now connected to MongoDB for data processing.
 - **Data Storage** - Game statistics are now stored in MongoDB.
 
+## Login
+For this deliverable, I added support for user authentication. 
+- **Registration** - New users may register under a unique username and password.
+- **Authentication** - By logging in, existing users are authenticated and connected to their data.
+- **Credentials** - MongoDB is used to store and retrieve user credentials.
+- **Restrictions** - Users must enter their credentials in order to play.
+
