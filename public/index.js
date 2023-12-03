@@ -1,5 +1,35 @@
 'use strict';
 
+// WEBSOCKET...
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+let socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
+function configureWebSocket() {
+  socket.onopen = (event) => {
+    console.log('socket open');
+  };
+  socket.onclose = (event) => {
+    console.log('socket closed')
+  };
+  socket.onmessage = async (event) => {
+    const msg = JSON.parse(await event.data.text());
+    displayLogin(msg.user);
+  }
+};
+
+function displayLogin(user) {
+  let loginMsg = document.getElementById('message');
+  loginMsg.innerText = user + ' logged in!';
+}
+
+function broadcastEvent(user) {
+  const event = {
+    user: user
+  };
+  socket.send(JSON.stringify(event));
+};
+
+
 // LOGIN DISPLAY...
 (async () => {
   const username = localStorage.getItem('username');
@@ -44,6 +74,7 @@ async function verify(endpoint) {
   if (response.ok) {
     localStorage.setItem('username', username);
     window.location.href = 'play.html';
+    broadcastEvent(username);
   } else {
     const body = await response.json();
     const modalEl = document.querySelector('#msgModal');
@@ -73,3 +104,5 @@ async function getUser(username) {
   }
   return null;
 }
+
+configureWebSocket();
