@@ -48,6 +48,7 @@ function getUserByToken(token) {
   return userCollection.findOne({ token: token });
 }
 
+
 // STATS FUNCTIONS...
 async function updateStats(username, stats) {
   const query = { username: username };
