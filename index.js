@@ -2,8 +2,11 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 
-const app = express();
 const DB = require('./database.js');
+const { peerProxy } = require('./peerProxy.js');
+
+const app = express();
+
 const authCookieName = 'token';
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
@@ -12,6 +15,7 @@ const port = process.argv.length > 2 ? process.argv[2] : 4000;
 // MIDDLEWARE...
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(express.static('public'));
 
 app.set('trust proxy', true);
@@ -108,6 +112,8 @@ function setAuthCookie(res, authToken) {
   });
 }
 
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);
