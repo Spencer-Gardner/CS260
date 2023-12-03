@@ -53,4 +53,17 @@ For this deliverable, I added endpoints to the backend for getting and posting u
 - **Third-Party Endpoints** - play.js makes a call to a dictionary API when a word is entered.
 - **Backend Endpoints** - index.js defines endpoints for getting and posting stats.
 - **Frontend Endpoints** - Both play.js and stats.js make calls using fetch to the endpoints provided in index.js.
-  
+
+## Database
+For this deliverable, I connected my application to a database.
+- **MongoDB Atlas** - I created a database using MongoDB Atlas.
+- **Endpoints** - The server endpoints are now connected to MongoDB for data processing.
+- **Data Storage** - Game statistics are now stored in MongoDB.
+
+## Login
+For this deliverable, I added support for user authentication. 
+- **Registration** - New users may register under a unique username and password.
+- **Authentication** - By logging in, existing users are authenticated and connected to their data.
+- **Credentials** - MongoDB is used to store and retrieve user credentials.
+- **Restrictions** - Users must enter their credentials in order to play.
+
