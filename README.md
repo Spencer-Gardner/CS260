@@ -21,14 +21,14 @@
 
 ## HTML
 For this deliverable, I developed the basic structure of my application using HTML.
-- **Pages** - I built four HTML pages: _Home_, _Play_, _Stats_, and _About_. 
+- **Pages** - I built four HTML pages: Home, Play, Stats, and About. 
 - **Links** - There is a menu at the top of each page that allows for navigation between pages.
-- **Text** - The textual content is composed mostly of headers and labels right now. I intend to expand the _About_ section with instructions, but I am still testing what works best. 
-- **Service Calls** - _Play_ shows a connection to a dictionary API for reference.
+- **Text** - The textual content is composed mostly of headers and labels right now. I intend to expand the About section with instructions, but I am still testing what works best. 
+- **Service Calls** - Play shows a connection to a dictionary API for reference.
 - **Images** - I added placeholders for a logo that I am still working on. I also added an icon for the user. I don't think I will use any other images.
-- **Login** - _Home_ includes a login section displaying textboxes for both username and password.
-- **Database** - _Stats_ includes tables representing data that will be stored in and pulled from the database.
-- **WebSocket** - _Play_ shows real-time data entered by the user.
+- **Login** - Home includes a login section displaying textboxes for both username and password.
+- **Database** - Stats includes tables representing data that will be stored in and pulled from the database.
+- **WebSocket** - Play shows real-time data entered by the user.
 
 ## CSS
 For this deliverable, I formatted and styled my application.
@@ -36,7 +36,7 @@ For this deliverable, I formatted and styled my application.
 - I updated the style and format of the navigation elements.
 - For the most part, the application is responsive to resizing. However, there are a few quirks on the extremes that I am still trying to sort out.
 - I opted for a minimalist style. I used a simple black-and-white theme for all the content. I feel like, for the most part, things are styled well. I am still working out a few minor preferences. Since I don't know much about JavaScript yet, elements may need to change.
-- I only used a single font. Most of the textual content will be in the _About_ section. I havn't added it in yet, but I'm almost done writing everything.
+- I only used a single font. Most of the textual content will be in the About section. I havn't added it in yet, but I'm almost done writing everything.
 - I updated a few of the icons, but I still need to add the official logo.
 
 ## JavaScript
@@ -67,3 +67,9 @@ For this deliverable, I added support for user authentication.
 - **Credentials** - MongoDB is used to store and retrieve user credentials.
 - **Restrictions** - Users must enter their credentials in order to play.
 
+## WebSocket
+For this deliverable, I updated my application to include a simple use of WebSocket. 
+- **Backend** - I created a peerProxy.js file and connected it to my backend files.
+- **Frontend** - The JavaScript file for the home page includes code on the frontend that establishes a WebSocket connection.
+- **Data** - Player usernames are sent over WebSocket.
+- **Interface** - When another player logs in, a notification is displayed on the home page.
