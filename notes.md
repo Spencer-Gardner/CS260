@@ -5,10 +5,12 @@
 ![image](https://github.com/Spencer-Gardner/CS_260/assets/120418845/a8da1b20-6911-4481-a0e8-5b7294405d0b)
 <br>
 
+
 ## Bash
 - `sudo ssh -i ./Keys/CS260_Instance.pem ubuntu@spencer-gardner.click `
 - `sudo ../deployFiles.sh -k ../../Keys/CS260_Instance.pem -h spencer-gardner.click -s startup `
 <br>
+
 
 ## Midterm Study Guide
 
@@ -282,3 +284,149 @@ coinToss
 //    Coin toss result: tails
 //    Toss completed
 ```
+
+
+## Final Study Guide
+
+1. _What ports are used for HTTP, HTTPS, SSH?_
+HTTP: Port 80
+HTTPS: Port 443
+SSH: Port 22
+
+2. _What do HTTP status codes in the 300, 400, 500 range indicate?_
+Redirection Messages
+Client Error
+Server Error
+
+3. _What does the HTTP header content-type allows you to do?_
+See Midterm
+
+4. _What do the following attributes of a cookie do?_
+Domain = 
+Path = 
+SameSite = Only return cookie to generated domain.
+HTTPOnly = Prevent JavaScript from running on the browser until read.
+
+5. _Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?_
+Function, Order, Output
+
+6. _Given the following Express service code: What does the following JavaScript fetch return?_
+fetch is a front-end call that returns the results from communication with a server client.
+
+7. _Given the following MongoDB query, `{ cost: { $gt: 10 }, name: /fran.*/}`, select all of the matching documents.
+Select all documents with a cost greater than ten and name starting with fran. Returns an array
+
+8. _How should you store user passwords in a database?_
+Hashed and Salted
+
+9. _Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?_
+Study Simon's Websocket (onconnect, ondisconnect, onmessage...)
+
+10. _What is the WebSocket protocol used for?_
+Connection where either server or client can initiate the contact.
+
+11. _What is JSX and how are the curly braces rendered?_
+JavaScript and HTML File
+Anything within the return is rendered to the screen. Curly braces for functions and variables.
+
+12. _Assuming an HTML document with `<div id="root"></div>`, what content will the following React component generate?
+```jsx
+  function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+  }
+  function App() {
+    return (
+      <div>
+        <Welcome name="Sara" />
+        <Welcome name="Cahal" />
+        <Welcome name="Edite" />
+      </div>
+    );
+  }
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(<App />);
+```
+```
+  Hello, Sara
+  Hello, Cahal
+  Hello, Edite
+```
+
+13. _Assuming an HTML document with `<div id="root"></div>`, what content will the following React component generate?_
+```jsx
+  function Numbers() { 
+    const numbers = [1, 2, 3, 4, 5];
+    const listItems = numbers.map((number) =>
+      <li>{number}</li>
+    );
+    return(<ul>{listItems}</ul>)
+  }
+  const root = ReactDOM.createRoot(document.getElementById('root')); 
+  root.render(<Numbers/>);
+```
+```
+* 1
+* 2
+* 3
+* 4
+* 5
+```
+    
+14. _What does the following React component do?_
+```jsx
+  function Example() {
+    // Declare a new state variable, which we'll call "count"  
+    const [count, setCount] = useState(0);
+    return (
+      <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>
+          Click me
+        </button>
+      </div>
+    );
+  }
+```
+Each click increments the count.
+
+15. _What are React Hooks used for?_
+Handle the state. Handle life-cycle events. Modify state of the component.
+
+16. _What is the useEffect hook used for?_
+Monitor life-cycle and modify a state in response to a change in another state.
+
+17. _What does this code do?_
+```jsx
+  export default function App() {
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="blogs" element={<Blogs />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    );
+  }
+```
+Defines paths and reroutes/renders the corresponding component based on the path
+
+18. _What role does npm play in web development?_
+Manages Node packages; allows dowloading external packages
+
+19. _What does package.json do in a npm project?_
+Lists packages; specifies scripts such as for deployment 
+
+20. _What does the fetch function do?_
+
+
+21. _What does node.js do?_
+Runs the server
+
+22. _What does Vite do?_
+Allows you to bundle all your React code for production and deployment
+Transposing .jsx code to JavaScript allowing th browser to run it
+
