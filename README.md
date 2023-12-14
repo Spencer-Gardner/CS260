@@ -73,3 +73,12 @@ For this deliverable, I updated my application to include a simple use of WebSoc
 - **Frontend** - The JavaScript file for the home page includes code on the frontend that establishes a WebSocket connection.
 - **Data** - Player usernames are sent over WebSocket.
 - **Interface** - When another player logs in, a notification is displayed on the home page.
+
+## React
+For this deliverable, I converted my application to React.
+- **Vite** - I used Vite to bundle and transpile my code.
+- **Components** - I created components for key elements of the application, including the login, game, and stats files.
+- **Router** - I added routing between the components.
+- **Hooks** - I included hooks such as `useState` and `useEffect` to track state variables.
+
+  
