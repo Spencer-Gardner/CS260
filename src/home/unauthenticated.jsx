@@ -1,6 +1,6 @@
 import React from 'react';
-
 import Button from 'react-bootstrap/Button';
+
 import {MessageDialog} from './message';
 
 export function Unauthenticated(props) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
-
 import { Button } from 'react-bootstrap';
+
 import './play.css';
 
 export function Game(props) {
@@ -15,8 +15,6 @@ export function Game(props) {
     const [extraInterval, setExtraInterval] = React.useState(null);
     const [extraLetters, setExtraLetters] = React.useState(['_', '_']);
     const [mainLetters, setMainLetters] = React.useState(['_', '_', '_', '_', '_', '_', '_']);
-    
-    const userName = props.userName;
 
     function getLetter() {
         const weightedLetters = [
@@ -97,6 +95,8 @@ export function Game(props) {
     }
 
     async function record() {
+
+        const userName = localStorage.getItem('userName');
        
         let stats = {};
         try {

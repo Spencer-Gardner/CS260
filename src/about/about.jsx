@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './about.css';
 
 export function About() {
@@ -7,7 +8,7 @@ export function About() {
             <div className="text-center mx-5 pt-5 pb-5 px-5">
                 <h1>About</h1>
                 <p>
-                    Welcome to Wordlock! Wordlock is a simple word game inspired by...
+                    Welcome to Wordlock!
                 </p>
             </div>
             <div className="text-center mx-5 px-5">
