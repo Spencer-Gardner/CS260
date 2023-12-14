@@ -1,9 +1,10 @@
 import React from 'react';
+import { Game } from './game'
 
-export function Play() {
-    return (
-      <main className='container-fluid bg-secondary text-center'>
-        <div>play displayed here</div>
-      </main>
-    );
-  }
+export function Play(props) {
+  return (
+    <main>
+    <Game userName={props.userName} />
+  </main>
+  );
+}
