@@ -1,0 +1,19 @@
+main {
+    overflow: scroll;
+}
+
+#timer-container, #score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#input1, #input2, #input3, #input4, #input5, #input6, #input7 {
+    max-width: 4em;
+    aspect-ratio: 1/1;
+    margin: 2.5px;
+}
+
+* {
+    touch-action: manipulation;
+}

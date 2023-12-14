@@ -6,7 +6,8 @@
     display: flex;
     flex-direction: column;
     min-width: 375px;
-}
+    height: 100vh;
+  }
   
 header {
     flex: 0 80px;
@@ -16,7 +17,6 @@ header {
 menu {
     flex: 1;
     display: flex;
-    /*  overwrite Bootstrap so the menu does not wrap */
     flex-direction: row !important;
     list-style: none;
 }
@@ -52,6 +52,6 @@ footer a {
         display: none;
     }
     main {
-        flex: 1 100vh;
+        display: none
     }
 }  

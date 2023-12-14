@@ -1,0 +1,11 @@
+th, td {
+    width: 50%;
+}
+
+#stats {
+    width: 25% !important;
+}
+
+#highscores {
+    width: 25% !important;
+}
