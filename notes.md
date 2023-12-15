@@ -232,7 +232,7 @@ Superuser Do: `sudo`
 29. _Which of the following is true when the `-la` parameter is specified for the `ls` console command?_  
 Long All: `-la`
 
-30. _Which of the following is true for the domain name `banana.fruit.bozo.click`, which is the top level domain, which is a subdomain, which is a root domain?_  
+30. _Which of the following is true for the domain name 'banana.fruit.bozo.click', which is the top level domain, which is a subdomain, which is a root domain?_  
 ![image](https://github.com/Spencer-Gardner/CS_260/assets/120418845/2ecca67a-a8a0-4c17-8a81-b22d84087518)
 
 31. _Is a web certificate necessary to use HTTPS?_  
@@ -295,44 +295,43 @@ HTTPS: Port 443
 SSH: Port 22  
 
 2. _What do HTTP status codes in the 300, 400, 500 range indicate?_  
-Redirection Messages  
-Client Errors  
-Server Errors  
+300: Redirection Messages  
+400: Client Errors  
+500: Server Errors  
 
 3. _What does the HTTP header 'Content-Type' allow you to do?_  
 The HTTP header 'Content-Type' allows you to specify the type of content being sent in the HTTP request or response body. This header informs the recipient about the type of data contained within the message body, allowing the recipient to properly interpret and handle that data. For example, 'text/plain' denotes plain text data.  
 When a server sends an HTTP response, it uses the Content-Type header to inform the client about the type of data being returned. Similarly, when a client sends an HTTP request with a body (e.g., during a 'POST' request), it uses the Content-Type header to specify the format of the data being sent to the server.
 
-5. _What do the following attributes of a cookie do?_  
-'Domain' = Specifies the domain to which the cookie belongs.  
-'Path' = Defines the URL path for which the cookie is valid.  
-'SameSite' = Only return cookie to generated domain; aims to mitigate certain types of cross-site request forgery (CSRF) attacks by controlling when cookies are sent along with cross-origin requests.  
-'HTTPOnly' = Prevents JavaScript from running on the browser until read; security measure that, when set, prevents client-side scripts (e.g., JavaScript) from accessing the cookie through the `document.cookie` API. This helps mitigate certain types of attacks, such as cross-site scripting (XSS), by ensuring that the cookie is only accessible and manageable via HTTP requests and cannot be accessed by JavaScript code.  
+4. _What do the following attributes of a cookie do?_  
+'Domain': Specifies the domain to which the cookie belongs.  
+'Path': Defines the URL path for which the cookie is valid.  
+'SameSite': Only return cookie to generated domain; aims to mitigate certain types of cross-site request forgery (CSRF) attacks by controlling when cookies are sent along with cross-origin requests.  
+'HTTPOnly': Prevents JavaScript from running on the browser until read; security measure that, when set, prevents client-side scripts (e.g., JavaScript) from accessing the cookie through the 'document.cookie' API. This helps mitigate certain types of attacks, such as cross-site scripting (XSS), by ensuring that the cookie is only accessible and manageable via HTTP requests and cannot be accessed by JavaScript code.
 
-6. _Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of '/foo/bar'?_  
-When the request URL path matches '/foo/bar', Express first executes the middleware functions that match this path. After executing the matching middleware functions, Express proceeds to the route handler, logging its output in the console. Finally, the response with the message 'Response' would be sent back to the client.  
-(Function, Order, Output)
+5. _Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of '/foo/bar'?_  
+When the request URL path matches '/foo/bar', Express first executes the middleware functions that match this path. After executing the matching middleware functions, Express proceeds to the route handler, logging its output in the console. Finally, the response with the message 'Response' would be sent back to the client. --> (Function, Order, Output)
 
-8. _Given the following Express service code: What does the following JavaScript `fetch` return?_  
+6. _Given the following Express service code: What does the following JavaScript `fetch` return?_  
 `fetch` is a front-end call that returns the results from communication with a server client.
 
-9. _Given the following MongoDB query, `{ cost: { $gt: 10 }, name: /fran.*/}`, select all of the matching documents._  
+7. _Given the following MongoDB query, `{ cost: { $gt: 10 }, name: /fran.*/}`, select all of the matching documents._  
 Select all documents with a cost greater than ten and name starting with 'fran', then return an array.
 
-10. _How should you store user passwords in a database?_  
-Hashed and Salted
+8. _How should you store user passwords in a database?_  
+Hashed + Salted
 
-11. _Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?_
+9. _Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?_  
 'onconnect', 'ondisconnect', 'onmessage'
 
-12. _What is the WebSocket protocol used for?_  
+10. _What is the WebSocket protocol used for?_  
 The WebSocket protocol is a communication protocol that provides full-duplex communication channels over a single, long-lived TCP connection. It is designed to enable bi-directional, real-time communication between a client (such as a web browser) and a server; connection where either server or client can initiate the contact.
 
-13. _What is JSX and how are the curly braces rendered?_  
+11. _What is JSX and how are the curly braces rendered?_  
 JSX (JavaScript XML) is a syntax extension used in React, a JavaScript library for building user interfaces. JSX allows developers to write HTML-like code within JavaScript, making it easier to create and compose UI components in React applications.  
 Anything within the return is rendered to the screen; curly braces within the HTML are used for functions and variables.
 
-14. _Assuming an HTML document with `<div id="root"></div>`, what content will the following React component generate?_  
+12. _Assuming an HTML document with `<div id="root"></div>`, what content will the following React component generate?_  
 ```jsx
   function Welcome(props) {
     return <h1>Hello, {props.name}</h1>;
@@ -393,8 +392,7 @@ Anything within the return is rendered to the screen; curly braces within the HT
 Each click increments the count.
 
 15. _What are React Hooks used for?_  
-React Hooks are a feature introduced in React 16.8 that allow functional components to use state, lifecycle methods, and other React features without needing to write a class. Hooks provide a way to reuse stateful logic across components and offer a more concise and readable way to manage state and side effects in functional components.  
-Handle the State; Handle Life-Cycle Events; Modify State of the Component
+React 'Hooks' are a feature introduced in React 16.8 that allow functional components to use state, lifecycle methods, and other React features without needing to write a class. Hooks provide a way to reuse stateful logic across components and offer a more concise and readable way to manage state and side effects in functional components. --> (Handle the State; Handle Life-Cycle Events; Modify State of the Component)
 
 16. _What is the useEffect hook used for?_  
 Allows you to perform side effects after the component has rendered or when certain dependencies have changed; monitors life-cycle and modify a state in response to a change in another state.
