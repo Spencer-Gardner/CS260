@@ -394,7 +394,7 @@ Each click increments the count.
 15. _What are React Hooks used for?_  
 React 'Hooks' are a feature introduced in React 16.8 that allow functional components to use state, lifecycle methods, and other React features without needing to write a class. Hooks provide a way to reuse stateful logic across components and offer a more concise and readable way to manage state and side effects in functional components. --> (Handle the State; Handle Life-Cycle Events; Modify State of the Component)
 
-16. _What is the useEffect hook used for?_  
+16. _What is the `useEffect` hook used for?_  
 Allows you to perform side effects after the component has rendered or when certain dependencies have changed; monitors life-cycle and modify a state in response to a change in another state.
 
 17. _What does this code do?_  
