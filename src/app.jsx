@@ -65,7 +65,7 @@ function App() {
         <footer className="bg-black text-white-50 p-2 fixed-bottom">
             <div className="container-fluid">
                 <span className="text-reset">Spencer Gardner</span>
-                <NavLink className="text-reset" href="https://github.com/Spencer-Gardner/CS_260">GitHub</NavLink>
+                <a className="text-reset" href="https://github.com/Spencer-Gardner/CS_260">GitHub</a>
             </div>
         </footer>
     </div>
