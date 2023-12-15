@@ -239,7 +239,7 @@ Long All: `-la`
 Yes, a web certificate, specifically an SSL/TLS certificate, is necessary to use HTTPS (Hypertext Transfer Protocol Secure) on a website. HTTPS is the secure version of HTTP, and it encrypts the data exchanged between a user's web browser and the web server. This encryption is essential for securing sensitive information, such as login credentials, personal data, and payment details, transmitted over the internet.
 
 32. _Can a DNS A record point to an IP address or another A record?_  
-The DNS database records that facilitate the mapping of domain names to IP addresses come in several flavors. The main ones we are concerned with are the address (A) and the canonical name (CNAME) records. An A record is a straight mapping from a domain name to an IP address. A CNAME record maps one domain name to another domain name. This acts as a domain name alias. You would use a CNAME to do things like map `byu.com` to the same IP address as `byu.edu` so that either one could be used.
+The DNS database records that facilitate the mapping of domain names to IP addresses come in several flavors. The main ones we are concerned with are the address (A) and the canonical name (CNAME) records. An A record is a straight mapping from a domain name to an IP address. A CNAME record maps one domain name to another domain name. This acts as a domain name alias. You would use a CNAME to do things like map 'byu.com' to the same IP address as 'byu.edu' so that either one could be used.
 
 33. _Port 443, 80, 22 is reserved for which protocol?_  
 HTTPS: Port 443  
