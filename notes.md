@@ -284,52 +284,55 @@ coinToss
 //    Coin toss result: tails
 //    Toss completed
 ```
+<br>
 
 
 ## Final Study Guide
 
-1. _What ports are used for HTTP, HTTPS, SSH?_
-HTTP: Port 80
-HTTPS: Port 443
-SSH: Port 22
+1. _What ports are used for HTTP, HTTPS, SSH?_  
+HTTP: Port 80  
+HTTPS: Port 443  
+SSH: Port 22  
 
-2. _What do HTTP status codes in the 300, 400, 500 range indicate?_
-Redirection Messages
-Client Error
-Server Error
+2. _What do HTTP status codes in the 300, 400, 500 range indicate?_  
+Redirection Messages  
+Client Errors  
+Server Errors  
 
-3. _What does the HTTP header content-type allows you to do?_
-See Midterm
+3. _What does the HTTP header 'Content-Type' allow you to do?_  
+The HTTP header 'Content-Type' allows you to specify the type of content being sent in the HTTP request or response body. This header informs the recipient about the type of data contained within the message body, allowing the recipient to properly interpret and handle that data. For example, 'text/plain' denotes plain text data.  
+When a server sends an HTTP response, it uses the Content-Type header to inform the client about the type of data being returned. Similarly, when a client sends an HTTP request with a body (e.g., during a 'POST' request), it uses the Content-Type header to specify the format of the data being sent to the server.
 
-4. _What do the following attributes of a cookie do?_
-Domain = 
-Path = 
-SameSite = Only return cookie to generated domain.
-HTTPOnly = Prevent JavaScript from running on the browser until read.
+5. _What do the following attributes of a cookie do?_  
+'Domain' = Specifies the domain to which the cookie belongs.  
+'Path' = Defines the URL path for which the cookie is valid.  
+'SameSite' = Only return cookie to generated domain; aims to mitigate certain types of cross-site request forgery (CSRF) attacks by controlling when cookies are sent along with cross-origin requests.  
+'HTTPOnly' = Prevents JavaScript from running on the browser until read; security measure that, when set, prevents client-side scripts (e.g., JavaScript) from accessing the cookie through the `document.cookie` API. This helps mitigate certain types of attacks, such as cross-site scripting (XSS), by ensuring that the cookie is only accessible and manageable via HTTP requests and cannot be accessed by JavaScript code.  
 
-5. _Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?_
-Function, Order, Output
+6. _Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of '/foo/bar'?_  
+When the request URL path matches '/foo/bar', Express first executes the middleware functions that match this path. After executing the matching middleware functions, Express proceeds to the route handler, logging its output in the console. Finally, the response with the message 'Response' would be sent back to the client.  
+(Function, Order, Output)
 
-6. _Given the following Express service code: What does the following JavaScript fetch return?_
-fetch is a front-end call that returns the results from communication with a server client.
+8. _Given the following Express service code: What does the following JavaScript `fetch` return?_  
+`fetch` is a front-end call that returns the results from communication with a server client.
 
-7. _Given the following MongoDB query, `{ cost: { $gt: 10 }, name: /fran.*/}`, select all of the matching documents.
-Select all documents with a cost greater than ten and name starting with fran. Returns an array
+9. _Given the following MongoDB query, `{ cost: { $gt: 10 }, name: /fran.*/}`, select all of the matching documents._  
+Select all documents with a cost greater than ten and name starting with 'fran', then return an array.
 
-8. _How should you store user passwords in a database?_
+10. _How should you store user passwords in a database?_  
 Hashed and Salted
 
-9. _Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?_
-Study Simon's Websocket (onconnect, ondisconnect, onmessage...)
+11. _Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?_
+'onconnect', 'ondisconnect', 'onmessage'
 
-10. _What is the WebSocket protocol used for?_
-Connection where either server or client can initiate the contact.
+12. _What is the WebSocket protocol used for?_  
+The WebSocket protocol is a communication protocol that provides full-duplex communication channels over a single, long-lived TCP connection. It is designed to enable bi-directional, real-time communication between a client (such as a web browser) and a server; connection where either server or client can initiate the contact.
 
-11. _What is JSX and how are the curly braces rendered?_
-JavaScript and HTML File
-Anything within the return is rendered to the screen. Curly braces for functions and variables.
+13. _What is JSX and how are the curly braces rendered?_  
+JSX (JavaScript XML) is a syntax extension used in React, a JavaScript library for building user interfaces. JSX allows developers to write HTML-like code within JavaScript, making it easier to create and compose UI components in React applications.  
+Anything within the return is rendered to the screen; curly braces within the HTML are used for functions and variables.
 
-12. _Assuming an HTML document with `<div id="root"></div>`, what content will the following React component generate?
+14. _Assuming an HTML document with `<div id="root"></div>`, what content will the following React component generate?_  
 ```jsx
   function Welcome(props) {
     return <h1>Hello, {props.name}</h1>;
@@ -352,7 +355,7 @@ Anything within the return is rendered to the screen. Curly braces for functions
   Hello, Edite
 ```
 
-13. _Assuming an HTML document with `<div id="root"></div>`, what content will the following React component generate?_
+13. _Assuming an HTML document with `<div id="root"></div>`, what content will the following React component generate?_  
 ```jsx
   function Numbers() { 
     const numbers = [1, 2, 3, 4, 5];
@@ -386,16 +389,17 @@ Anything within the return is rendered to the screen. Curly braces for functions
       </div>
     );
   }
-```
+```  
 Each click increments the count.
 
-15. _What are React Hooks used for?_
-Handle the state. Handle life-cycle events. Modify state of the component.
+15. _What are React Hooks used for?_  
+React Hooks are a feature introduced in React 16.8 that allow functional components to use state, lifecycle methods, and other React features without needing to write a class. Hooks provide a way to reuse stateful logic across components and offer a more concise and readable way to manage state and side effects in functional components.  
+Handle the State; Handle Life-Cycle Events; Modify State of the Component
 
-16. _What is the useEffect hook used for?_
-Monitor life-cycle and modify a state in response to a change in another state.
+16. _What is the useEffect hook used for?_  
+Allows you to perform side effects after the component has rendered or when certain dependencies have changed; monitors life-cycle and modify a state in response to a change in another state.
 
-17. _What does this code do?_
+17. _What does this code do?_  
 ```jsx
   export default function App() {
     return (
@@ -412,21 +416,21 @@ Monitor life-cycle and modify a state in response to a change in another state.
     );
   }
 ```
-Defines paths and reroutes/renders the corresponding component based on the path
+Defines paths and reroutes/renders the corresponding component based on the path.
 
-18. _What role does npm play in web development?_
-Manages Node packages; allows dowloading external packages
+18. _What role does npm play in web development?_  
+npm (Node Package Manager) plays a crucial role in web development as a package manager for JavaScript and web-related technologies. It offers a vast ecosystem of open-source libraries, tools, and frameworks that developers can easily install, manage, and use in their projects.
 
-19. _What does package.json do in a npm project?_
-Lists packages; specifies scripts such as for deployment 
+19. _What does package.json do in a npm project?_  
+'package.json' plays a crucial role in managing dependencies, defining project configuration, and facilitating the development process by providing a structured and standardized way to manage project metadata, dependencies, and scripts within an npm project. 
 
-20. _What does the fetch function do?_
+20. _What does the `fetch` function do?_  
+Used to make asynchronous network requests to retrieve resources (such as data, files, or API responses) from a specified URL or network endpoint.
 
+21. _What does node.js do?_  
+Node.js is an open-source, server-side JavaScript runtime environment built on Chrome's V8 JavaScript engine. It allows developers to run JavaScript code on the server-side, enabling the creation of scalable, high-performance, and networked applications. Basically, it allows you to run your server.
 
-21. _What does node.js do?_
-Runs the server
-
-22. _What does Vite do?_
-Allows you to bundle all your React code for production and deployment
-Transposing .jsx code to JavaScript allowing th browser to run it
+22. _What does Vite do?_  
+Vite is a modern build tool that is specifically designed for building web applications, primarily focusing on front-end development. It aims to provide a fast, efficient, and streamlined development experience, especially for modern JavaScript frameworks like Vue.js and React.  
+Overall, it allows you to bundle all your React code for production and deployment and to transpose '.jsx' code to JavaScript to enable the browser to run it.
 
